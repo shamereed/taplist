@@ -18,7 +18,17 @@ def cleanhtml(raw_html):
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
 
-def strip_list(bar_name, beers):
+  def strip_list(bar_name, beers):
+	clean_beers = []
+	for beer in beers:
+		if beer.text.startswith(".") or beer.text.startswith(" "):
+			continue
+		name = (beer.text.strip()).upper().encode('ascii', 'ignore')
+		clean_beers.append(name)
+		print name
+	return clean_beers
+  
+def strip_list_to_file(bar_name, beers):
 	fp = open('tap_list.txt', 'a')
 	fp.write(bar_name.upper() + ':\n')
 	clean_beers = []
