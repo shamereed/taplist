@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from email.mime.text import MIMEText
-import re, requests, smtplib, json
+import re, requests
 
 ##################################################################################
 
@@ -18,7 +18,7 @@ def cleanhtml(raw_html):
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
 
-  def strip_list(bar_name, beers):
+def strip_list(bar_name, beers):
 	clean_beers = []
 	for beer in beers:
 		if beer.text.startswith(".") or beer.text.startswith(" "):
