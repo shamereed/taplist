@@ -1,5 +1,5 @@
 # BEER LIST UTIL
-import requests
+import requests, sqlite3
 
 
 def replace_space(str_):
@@ -68,3 +68,14 @@ def strip_html_list_to_file(name, elements):
     fp.write('\n')
     fp.close()
     return clean_list
+
+
+def create_taplist_tables():
+    conn = sqlite3.connect("taplist.db")
+    cursor = conn.cursor()
+    cursor.execute("""CREATE TABLE bar
+                  (name text, location text, taplistID integer)
+                """)
+    cursor.execute("""CREATE TABLE taplist
+                  (name text, location text, taplistID integer)
+                """)
