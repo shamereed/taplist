@@ -1,21 +1,21 @@
 import tapfinder
 
 # print("\nList of Hoods")
-# beer_list.get_hoods()
+tapfinder.get_hoods()
 
-# hood = raw_input("Enter hood name: ")
-# beer_list.get_bars_in_hood(hood)
+hood = raw_input("Enter hood name: ")
+tapfinder.get_bars_in_hood(hood)
 
-#bar = raw_input("Enter bar name: ")
-#beer_list.get_tap_list(bar)
+bar = raw_input("Enter bar name: ")
+tapfinder.get_tap_list(bar)
 
-# beer_list.get_all_styles()
+tapfinder.get_all_styles()
 
-# beer_list.get_bar_details(bar)
+tapfinder.get_bar_details(bar)
 
-# beer_list.get_all_bars()
+tapfinder.get_all_bars()
 
 tapfinder.get_breweries()
 
-# brewery = raw_input("Enter brewery name: ")
-# beer_list.get_brewery_details(brewery)
+brewery = raw_input("Enter brewery name: ")
+tapfinder.get_brewery_details(brewery)
