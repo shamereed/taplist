@@ -1,21 +1,8 @@
-import beer_list
+class Beer:
 
-# print("\nList of Hoods")
-# beer_list.get_hoods()
-
-# hood = raw_input("Enter hood name: ")
-# beer_list.get_bars_in_hood(hood)
-
-bar = raw_input("Enter bar name: ")
-beer_list.get_tap_list(bar)
-
-# beer_list.get_all_styles()
-
-# beer_list.get_bar_details(bar)
-
-# beer_list.get_all_bars()
-
-# beer_list.get_breweries()
-
-# brewery = raw_input("Enter brewery name: ")
-# beer_list.get_brewery_details(brewery)
+    def __init__(self, name, beer_type, brewery_id, date_created, date_updated):
+        self.name = name
+        self.beer_type = beer_type
+        self.brewery_id = brewery_id
+        self.date_created = date_created
+        self.date_updated = date_updated

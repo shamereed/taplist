@@ -26,8 +26,16 @@ def get_breweries():
     req = requests.get(PHILLYTAPFINDER + 'on-tap')
     soup = BeautifulSoup(req.text, "html.parser")
     _list = soup.find('div', {"class": "results-grid"})
-    found_items = _list.find_all('a')
-    return util.strip_html_list(found_items)
+    breweries = util.strip_html_list(_list.find_all("span"))
+    addresses = util.strip_html_list(_list.find_all('span', {"class": "brew-loc"}))
+    brew_dict = {}
+    for item in breweries:
+        for address in addresses:
+            if address in item:
+                item = item.replace(address, '')
+                brew_dict[item] = address
+    print brew_dict
+    return brew_dict
 
 # Return basic info of brewery
 def get_brewery_details(brewery):

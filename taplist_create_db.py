@@ -18,7 +18,8 @@ taplist_table = """CREATE TABLE taplist (taplist_id INTEGER PRIMARY KEY,
                                         FOREIGN KEY (bar_id) REFERENCES bar (bar_id),
                                         FOREIGN KEY (beer_id) REFERENCES beer (beer_id));"""
 
-def create_tables(conn):
+
+def create_tables(conn):1
     try:
         c = conn.cursor()
         c.execute(bar_table)
