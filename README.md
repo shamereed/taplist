@@ -1,4 +1,4 @@
-# taplist
+# phillytapfinder
 
 Philly Tap Finder API
 
